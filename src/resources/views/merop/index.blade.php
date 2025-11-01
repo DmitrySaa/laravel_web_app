@@ -3,11 +3,11 @@
 @section('title', 'Мероприятия')
 
 @section('content')
-    <p>Здесь список мероприятий...</p>
-    <ul>
-        @foreach($events as $event)
-            <li>{{ $event['title'] }}</li>
-            <li>{{ $event['date'] }}</li>
-        @endforeach
-    </ul>
+    <div id="app">
+        <example-component :events='@json($events)'></example-component>
+    </div>
 @endsection
+
+@push('scripts')
+    @vite('resources/js/app.js')
+@endpush
